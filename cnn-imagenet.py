@@ -59,36 +59,6 @@ model.add(layers.Dense(4, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer=optimizers.RMSprop(lr=2e-5), metrics=['acc'])
 
-
-# train_datagen = ImageDataGenerator(
-#      rescale=1./255,
-#      rotation_range=40,
-#      width_shift_range=0.2,
-#      shear_range=0.2,
-#      zoom_range=0.2,
-#      horizontal_flip=True)
-# test_datagen = ImageDataGenerator(rescale=1./255)
-#
-# train_generator = train_datagen.flow_from_directory(
-#         train_dir,
-#         target_size=(224,224),
-#         color_mode='rgb',
-#         batch_size=32,
-#         class_mode='categorical'
-# )
-# validation_generator = test_datagen.flow_from_directory(
-#         validation_dir,
-#         target_size=(224,224),
-#         color_mode='rgb',
-#         batch_size=32,
-#         class_mode='categorical'
-# )
-#
-# for data_batch, labels_batch in train_generator:
-#     print('data batch shape: ', data_batch.shape)
-#     print('labels batch shape: ', labels_batch.shape)
-#     break
-
 history = model.fit(
      train_features, train_labels,
      epochs=30,
